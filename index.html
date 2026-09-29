@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-unit="bra">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barber Rvasc | Barbearia em Feira de Santana</title>
+<meta name="description" content="Barber Rvasc, barbearia em Feira de Santana (BA) com duas unidades: Brasília e Getúlio Vargas. Corte, barba, sobrancelha, barboterapia com ozônio e manicure, com hora marcada.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Barber Rvasc | Barbearia em Feira de Santana">
+<meta property="og:description" content="Duas unidades em Feira de Santana: Brasília e Getúlio Vargas. Corte, barba, sobrancelha e manicure com hora marcada.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Cpath fill='%23f4f4f2' transform='translate(4 22) scale(.47)' d='M60 13C53 3 39 3 31 11c-6 6-14 11-25 7-2-1-4 0-3 2 7 14 31 16 45 6 6-4 10-6 12-6s6 2 12 6c14 10 38 8 45-6 1-2-1-3-3-2-11 4-19-1-25-7-8-8-22-8-29 2z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Hanken+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<script>
+(function(){
+  var u = null;
+  try { var q = new URLSearchParams(location.search).get("unidade"); if (q) u = /getulio|gv/i.test(q) ? "gv" : "bra"; } catch(e){}
+  if (!u) { try { u = localStorage.getItem("rvasc-unidade"); } catch(e){} }
+  if (u === "gv" || u === "bra") document.documentElement.setAttribute("data-unit", u);
+})();
+</script>
+<style>
+:root{
+  --bg:#0a0a0a;
+  --bg-2:#141414;
+  --bg-3:#1f1f1f;
+  --fg:#f4f4f2;
+  --fg-2:#bdbdba;
+  --inv-2:#5c5c59;
+  --smoke:#8c8c89;
+  --bg-rgb:10,10,10;
+  --fg-rgb:244,244,242;
+  --line:rgba(var(--fg-rgb),.14);
+  --line-inv:rgba(var(--bg-rgb),.14);
+  --display:"Big Shoulders Display","Oswald","Arial Narrow",Impact,sans-serif;
+  --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --mono:"DM Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --gutter:clamp(16px,4vw,48px);
+  --max:1240px;
+  --bar:38px;
+  color-scheme:dark;
+}
+html[data-unit="gv"]{
+  --bg:#f4f4f2;
+  --bg-2:#eaeae7;
+  --bg-3:#dfdfdb;
+  --fg:#0a0a0a;
+  --fg-2:#3f3f3d;
+  --inv-2:#b5b5b2;
+  --smoke:#74746f;
+  --bg-rgb:244,244,242;
+  --fg-rgb:10,10,10;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+h1,h2,h3{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.9;letter-spacing:.005em;margin:0;text-wrap:balance}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;flex-shrink:0}
+.outline{color:transparent;-webkit-text-stroke:1.5px var(--fg)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:15px 24px;border:1px solid var(--fg);transition:background .25s,color .25s;cursor:pointer}
+.btn-solid{background:var(--fg);color:var(--bg)}
+.btn-solid:hover{background:transparent;color:var(--fg)}
+.btn-ghost{background:transparent;color:var(--fg)}
+.btn-ghost:hover{background:var(--fg);color:var(--bg)}
+.btn .arr{transition:transform .25s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* unit bar + nav */
+.top{position:fixed;left:0;right:0;top:0;z-index:50;padding-top:env(safe-area-inset-top,0px)}
+.unitbar{background:var(--fg);color:var(--bg)}
+.unitbar .wrap{height:var(--bar);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.unitbar-label{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.unitbar-addr{font-size:13px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.switch{display:inline-flex;border:1px solid var(--bg);position:relative;flex-shrink:0}
+.switch button{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;padding:5px 12px;border:0;background:transparent;color:var(--bg);cursor:pointer;position:relative;z-index:1;transition:color .3s}
+.switch button[aria-checked="true"]{background:var(--bg);color:var(--fg)}
+.unitbar-l{display:flex;align-items:center;gap:14px;min-width:0}
+.nav{transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.top.solid .nav{background:rgba(var(--bg-rgb),.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+.brand-txt{font-family:var(--display);font-weight:900;font-size:24px;letter-spacing:.06em;line-height:.85;text-transform:uppercase}
+.brand-txt small{display:block;font-family:var(--mono);font-weight:400;font-size:9px;letter-spacing:.3em;color:var(--smoke);margin-top:3px}
+.nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:14px;font-weight:500;position:relative;padding-block:4px}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav .btn{padding:11px 18px;font-size:12px}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--fg);width:44px;height:44px;cursor:pointer;position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:1.5px;background:currentColor;transition:transform .3s,opacity .3s}
+.burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:27px}
+.open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.open .burger span:nth-child(2){opacity:0}
+.open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{display:none}
+
+/* curtain */
+.curtain{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;transform:translateY(100%);pointer-events:none;visibility:hidden}
+.curtain.in{visibility:visible;transform:none;transition:transform .55s cubic-bezier(.7,0,.25,1)}
+.curtain.out{visibility:visible;transform:translateY(-100%);transition:transform .6s cubic-bezier(.7,0,.25,1)}
+.curtain svg{width:120px;height:40px;display:block}
+.curtain b{font-family:var(--display);font-weight:900;font-size:clamp(48px,10vw,120px);text-transform:uppercase;line-height:.9;text-align:center;padding-inline:16px}
+.curtain small{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;opacity:.6}
+
+/* hero */
+.hero{position:relative;padding-top:calc(150px + var(--bar) + env(safe-area-inset-top,0px));padding-bottom:0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:clamp(24px,5vw,72px);align-items:stretch}
+.hero h1{font-size:clamp(64px,13vw,188px);margin-top:22px}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line > span{display:block;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 .line:nth-child(2) > span{animation-delay:.12s}
+.hero h1 .line:nth-child(3) > span{animation-delay:.24s}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.hero-sub{display:flex;flex-wrap:wrap;gap:28px 48px;align-items:flex-end;justify-content:space-between;margin-top:36px;animation:fade 1s .5s both}
+.hero-sub p{max-width:46ch;font-size:clamp(16px,1.6vw,19px);color:var(--fg-2)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+@keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.pole{position:relative;border:1px solid var(--line);border-radius:60px;padding:14px;display:flex;flex-direction:column;align-items:center;gap:12px;min-height:420px}
+.pole-cap{width:56px;height:18px;border-radius:9px;background:var(--fg)}
+.pole-glass{flex:1;width:56px;border-radius:28px;overflow:hidden;position:relative;border:1px solid var(--line);background:var(--fg)}
+.pole-glass::before{content:"";position:absolute;inset:0;background-image:linear-gradient(45deg,var(--bg) 25%,var(--fg) 25%,var(--fg) 50%,var(--bg) 50%,var(--bg) 75%,var(--fg) 75%);background-size:56px 56px;animation:pole 1.6s linear infinite}
+.pole-glass::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.35),transparent 40%,rgba(255,255,255,.25) 60%,rgba(0,0,0,.35))}
+@keyframes pole{from{background-position:0 0}to{background-position:0 56px}}
+.pole-label{font-family:var(--mono);font-size:10px;letter-spacing:.3em;writing-mode:vertical-rl;color:var(--smoke)}
+
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--line);margin-top:64px}
+.stat{padding:26px 20px 30px;border-right:1px solid var(--line)}
+.stat:first-child{padding-left:0}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--display);font-size:clamp(40px,5vw,64px);font-weight:900;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;color:var(--smoke);display:block;margin-top:8px}
+.stars{letter-spacing:2px;font-size:14px}
+
+.marquee{border-block:1px solid var(--line);overflow:hidden;background:var(--fg);color:var(--bg)}
+.marquee-track{display:flex;width:max-content;animation:scroll 38s linear infinite}
+.marquee-track span{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.4vw,40px);text-transform:uppercase;padding:14px 0;white-space:nowrap;display:flex;align-items:center}
+.marquee-track span::after{content:"";width:14px;height:14px;margin-inline:28px;background:var(--bg);transform:rotate(45deg)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding-block:clamp(80px,11vw,140px)}
+.inv{background:var(--fg);color:var(--bg)}
+.inv .eyebrow{color:var(--inv-2)}
+.inv .outline{-webkit-text-stroke-color:var(--bg)}
+.inv .btn{border-color:var(--bg)}
+.inv .btn-solid{background:var(--bg);color:var(--fg)}
+.inv .btn-solid:hover{background:transparent;color:var(--bg)}
+.inv .btn-ghost{color:var(--bg)}
+.inv .btn-ghost:hover{background:var(--bg);color:var(--fg)}
+.inv :focus-visible{outline-color:var(--bg)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(40px,6vw,72px)}
+.sec-head h2{font-size:clamp(48px,8vw,108px);margin-top:18px}
+.sec-head p{max-width:42ch;color:var(--smoke)}
+.inv .sec-head p{color:var(--inv-2)}
+
+/* story */
+.story-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(40px,7vw,100px);align-items:start}
+.story-quote{font-family:var(--display);font-weight:700;font-size:clamp(34px,4.6vw,62px);line-height:.98;text-transform:uppercase;text-wrap:balance;margin-top:22px}
+.story-quote em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--bg)}
+.story-text{display:grid;gap:18px;font-size:17px;max-width:60ch}
+.story-text p{opacity:.85}
+.timeline{margin-top:40px;border-top:1px solid var(--line-inv)}
+.tl{display:grid;grid-template-columns:110px minmax(0,1fr);gap:20px;padding-block:22px;border-bottom:1px solid var(--line-inv)}
+.tl b{font-family:var(--display);font-size:36px;font-weight:900;line-height:1}
+.tl p{font-size:15px;color:var(--inv-2)}
+.tl strong{display:block;font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;color:var(--bg)}
+
+/* units */
+.units-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.unit{position:relative;border:1px solid var(--line);padding:clamp(24px,3.4vw,44px);display:flex;flex-direction:column;gap:22px;overflow:hidden;transition:border-color .3s}
+.unit:hover{border-color:var(--fg)}
+.unit-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.unit-tag{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;border:1px solid currentColor;padding:4px 8px;white-space:nowrap}
+.unit h3{font-size:clamp(44px,5.6vw,76px)}
+.unit .swatch{display:flex;gap:6px;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke)}
+.unit .swatch i{width:16px;height:16px;border:1px solid var(--line)}
+.unit-info{display:grid;gap:10px;font-size:15px}
+.unit-info div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.unit-info span:first-child{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke);padding-top:3px}
+.unit-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.unit.current{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.unit.current .unit-info div{border-color:var(--line-inv)}
+.unit.current .unit-info span:first-child,.unit.current .swatch{color:var(--inv-2)}
+.unit.current .btn{border-color:var(--bg)}
+.unit.current .btn-solid{background:var(--bg);color:var(--fg)}
+.unit.current .btn-ghost{color:var(--bg)}
+.unit.current .btn-ghost:hover{background:var(--bg);color:var(--fg)}
+.unit .here{display:none}
+.unit.current .here{display:inline-flex}
+.unit.current .go{display:none}
+
+/* services */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.tab{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 18px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;transition:background .2s,color .2s,border-color .2s;display:flex;gap:10px;align-items:center}
+.tab em{font-style:normal;color:var(--smoke)}
+.tab:hover{border-color:var(--fg)}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tab[aria-selected="true"] em{color:var(--inv-2)}
+.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(24px,5vw,64px);border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;padding-block:22px;border-bottom:1px solid var(--line);position:relative;align-items:start;animation:fade .5s both}
+.svc::before{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--fg);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.svc:hover::before{transform:scaleX(1)}
+.svc h3{font-family:var(--body);text-transform:none;font-weight:600;font-size:18px;line-height:1.3;letter-spacing:0;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.code{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;border:1px solid var(--line);padding:2px 6px;color:var(--smoke)}
+.svc .desc{font-size:14px;color:var(--smoke);grid-column:1}
+.svc .meta{grid-column:1;font-family:var(--mono);font-size:12px;color:var(--fg-2);margin-top:4px}
+.price{grid-column:2;grid-row:1 / span 2;text-align:right;font-family:var(--display);font-weight:700;font-size:32px;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price small{display:block;font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke);margin-bottom:4px}
+.book{grid-column:2;grid-row:3;justify-self:end;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px;opacity:.75;transition:opacity .2s}
+.svc:hover .book,.book:focus-visible{opacity:1}
+.club{margin-top:48px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;border:1px solid var(--line);padding:28px clamp(20px,3vw,36px);background:repeating-linear-gradient(-45deg,transparent 0 14px,rgba(var(--fg-rgb),.03) 14px 28px)}
+.club h3{font-size:clamp(28px,3.4vw,40px)}
+.club p{color:var(--smoke);max-width:52ch;margin-top:6px}
+
+/* team */
+.team{background:var(--bg-2)}
+.team-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.member{position:relative;aspect-ratio:3/4.4;max-width:100%;overflow:hidden;border:1px solid var(--line);background:var(--bg-3);isolation:isolate}
+.member .photo{position:absolute;inset:0;background-size:cover;background-position:center top;filter:grayscale(1) contrast(1.05);transform:scale(1.02);transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .6s}
+.member:hover .photo{transform:scale(1.08);filter:grayscale(0) contrast(1.05)}
+.member .ph{position:absolute;inset:0;display:grid;place-items:center;background:repeating-linear-gradient(-35deg,var(--bg-3) 0 16px,var(--bg-2) 16px 32px)}
+.member .ph b{font-family:var(--display);font-weight:900;font-size:clamp(110px,14vw,200px);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(var(--fg-rgb),.28);transition:transform .8s cubic-bezier(.2,.8,.2,1),-webkit-text-stroke-color .4s}
+.member:hover .ph b{transform:scale(1.1) rotate(-4deg);-webkit-text-stroke-color:rgba(var(--fg-rgb),.6)}
+.member .ph i{position:absolute;top:14px;left:14px;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);border:1px dashed var(--line);padding:4px 8px}
+.member .info{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(transparent,rgba(var(--bg-rgb),.94) 55%);z-index:2}
+.member .role{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-2)}
+.member h3{font-size:clamp(34px,3.4vw,48px);margin-top:6px}
+.member .vname{position:absolute;right:10px;top:14px;writing-mode:vertical-rl;font-family:var(--display);font-weight:900;font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:rgba(var(--fg-rgb),.35);z-index:2}
+.member .cta{display:inline-flex;margin-top:12px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;max-height:0;opacity:0;overflow:hidden;transition:max-height .4s,opacity .4s}
+.member:hover .cta,.member:focus-within .cta{max-height:30px;opacity:1}
+.team-note{margin-top:22px;font-size:13px;color:var(--smoke);font-family:var(--mono)}
+
+/* booking */
+.booking{background:var(--bg);border-top:1px solid var(--line)}
+.bk-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.bk-form{display:grid;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;padding-block:28px;border-bottom:1px solid var(--line)}
+.step-n{font-family:var(--display);font-weight:900;font-size:40px;line-height:.9;color:transparent;-webkit-text-stroke:1.2px var(--fg);transition:color .3s}
+.step.done .step-n{color:var(--fg)}
+.step-body{min-width:0;display:grid;gap:14px}
+.step h3{font-family:var(--body);font-size:19px;font-weight:600;text-transform:none;letter-spacing:0;line-height:1.2}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke)}
+.fields-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.bk-form input,.bk-form select,.bk-form textarea{width:100%;font:inherit;font-size:16px;color:var(--fg);background:var(--bg-2);border:1px solid var(--line);border-radius:0;padding:13px 14px;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.bk-form select{background-image:linear-gradient(45deg,transparent 50%,var(--fg) 50%),linear-gradient(135deg,var(--fg) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:40px}
+.bk-form select option,.bk-form select optgroup{background:var(--bg-2);color:var(--fg)}
+.bk-form input:focus,.bk-form select:focus,.bk-form textarea:focus{outline:none;border-color:var(--fg)}
+.bk-form textarea{min-height:84px;resize:vertical}
+.unit-pick{display:flex;flex-wrap:wrap;gap:8px}
+.pros{display:flex;flex-wrap:wrap;gap:8px}
+.pro,.slot,.upick{font-family:var(--mono);font-size:13px;padding:11px 16px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pro:hover,.slot:hover,.upick:hover{border-color:var(--fg)}
+.pro[aria-pressed="true"],.slot[aria-pressed="true"],.upick[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px}
+.slot{padding:11px 0;text-align:center;font-variant-numeric:tabular-nums}
+.hint{font-size:14px;color:var(--smoke)}
+.err{font-size:14px;border-left:2px solid var(--fg);padding-left:12px}
+.summary{position:sticky;top:130px;background:var(--fg);color:var(--bg);padding:clamp(22px,3vw,34px)}
+.summary h3{font-size:34px}
+.sum-list{margin-top:18px}
+.sum-row{display:flex;justify-content:space-between;gap:16px;padding-block:12px;border-bottom:1px solid var(--line-inv);font-size:15px}
+.sum-row span:first-child{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--inv-2);padding-top:3px;flex-shrink:0}
+.sum-row span:last-child{text-align:right;font-weight:600;min-width:0;overflow-wrap:anywhere}
+.sum-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;gap:12px}
+.sum-total b{font-family:var(--display);font-size:44px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums}
+.sum-total small{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--inv-2)}
+.summary .btn{width:100%;justify-content:center;margin-top:22px;border-color:var(--bg);background:var(--bg);color:var(--fg)}
+.summary .btn:hover{background:transparent;color:var(--bg)}
+.summary .btn[disabled]{opacity:.35;cursor:not-allowed;background:var(--bg);color:var(--fg)}
+.sum-note{font-size:13px;color:var(--inv-2);margin-top:14px}
+.done-box{border:1px solid var(--line-inv);padding:16px;margin-top:18px;font-size:14px}
+.done-box a{font-weight:600}
+
+/* ambience */
+.amb-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line-inv);border-left:1px solid var(--line-inv)}
+.amb{padding:30px 26px 34px;border-right:1px solid var(--line-inv);border-bottom:1px solid var(--line-inv);transition:background .3s,color .3s}
+.amb:hover{background:var(--bg);color:var(--fg)}
+.amb:hover p{color:var(--fg-2)}
+.amb svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.5}
+.amb h3{font-family:var(--body);font-weight:600;text-transform:none;letter-spacing:0;font-size:19px;line-height:1.2;margin-top:18px}
+.amb p{font-size:14px;color:var(--inv-2);margin-top:6px;transition:color .3s}
+.notice{margin-top:48px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.notice div{background:var(--bg);color:var(--fg);padding:30px clamp(20px,3vw,36px)}
+.notice h3{font-size:30px;margin-bottom:12px}
+.notice p{color:var(--fg-2);font-size:15px}
+
+/* reviews */
+.rev-top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(30px,6vw,80px);align-items:end;margin-bottom:56px}
+.score{font-family:var(--display);font-weight:900;font-size:clamp(120px,18vw,230px);line-height:.8}
+.score-meta h2{font-size:clamp(44px,6vw,84px);margin-top:16px}
+.score-meta p:last-child{color:var(--smoke);margin-top:8px}
+.quotes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.q{border:1px solid var(--line);padding:28px 24px;display:flex;flex-direction:column;gap:20px;justify-content:space-between;transition:transform .35s,border-color .35s}
+.q:hover{transform:translateY(-6px);border-color:var(--fg)}
+.q blockquote{margin:0;font-size:18px;line-height:1.45;font-weight:500}
+.q blockquote::before{content:"“";display:block;font-family:var(--display);font-size:64px;line-height:.6;margin-bottom:6px}
+.q footer{font-family:var(--mono);font-size:12px;color:var(--smoke);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.q .stars{font-size:12px;color:var(--fg)}
+.more-rev{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:12px;border:1px solid var(--line);padding:8px 12px;color:var(--fg-2)}
+.chip b{color:var(--fg);font-weight:500}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(40px,6vw,80px)}
+.addr{font-family:var(--display);font-weight:700;font-size:clamp(34px,4.4vw,56px);line-height:.95;text-transform:uppercase;margin-top:20px}
+.addr-sub{margin-top:14px;color:var(--inv-2);max-width:48ch}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.phone{margin-top:36px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.phone a{font-family:var(--display);font-weight:900;font-size:clamp(36px,4.6vw,52px);text-decoration:none;font-variant-numeric:tabular-nums}
+.copy{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:9px 12px;border:1px solid var(--bg);background:transparent;color:var(--bg);cursor:pointer}
+.copy:hover{background:var(--bg);color:var(--fg)}
+.hours{border-top:2px solid var(--bg)}
+.hours h3{font-size:30px;padding-block:18px 10px}
+.hr{display:flex;justify-content:space-between;gap:16px;padding-block:16px;border-bottom:1px solid var(--line-inv);font-variant-numeric:tabular-nums}
+.hr span:last-child{font-family:var(--mono);font-size:14px}
+.hr.today{background:var(--bg);color:var(--fg);padding-inline:14px;margin-inline:-14px}
+.hr.today span:first-child::after{content:"Hoje";font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;margin-left:10px;border:1px solid currentColor;padding:2px 6px;vertical-align:2px}
+.pay{margin-top:36px}
+.pay h4{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px;font-weight:500}
+.pay-list{display:flex;flex-wrap:wrap;gap:6px}
+.pay-list span{font-size:13px;border:1px solid var(--line-inv);padding:6px 10px}
+.contact-extra{margin-top:22px;font-size:14px;color:var(--inv-2)}
+
+/* final */
+.final h2{font-size:clamp(56px,11vw,160px);margin-top:20px}
+.final-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px;margin-top:36px}
+.final-row p{color:var(--smoke);max-width:44ch}
+footer.site{border-top:1px solid var(--line);padding-block:32px calc(32px + env(safe-area-inset-bottom,0px))}
+footer.site .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;font-size:13px;color:var(--smoke)}
+footer.site b{display:block;color:var(--fg);font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+footer.site a{text-decoration:none}
+footer.site a:hover{color:var(--fg)}
+
+.rv.pending{opacity:0;transform:translateY(34px)}
+.rv{transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fab{display:none}
+
+@media (max-width:1080px){
+  .team-row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(240px,34%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;scrollbar-width:thin}
+  .member{scroll-snap-align:start}
+  .member .cta{max-height:30px;opacity:1}
+  .quotes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stat:nth-child(3){border-right:0}
+  .stat:nth-child(4){padding-left:0}
+  .stat:nth-child(n+4){border-top:1px solid var(--line)}
+  .nav-links{gap:18px}
+}
+@media (max-width:980px){
+  .nav-links,.nav .btn{display:none}
+  .burger{display:block}
+  .mobile-menu{display:block;position:fixed;inset:0;z-index:-1;background:var(--bg);padding:calc(130px + env(safe-area-inset-top,0px)) var(--gutter) 40px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1);visibility:hidden;overflow-y:auto}
+  .open .mobile-menu{transform:none;visibility:visible}
+  .mobile-menu a{display:block;font-family:var(--display);font-weight:900;font-size:clamp(40px,11vw,60px);text-transform:uppercase;text-decoration:none;line-height:1.05;border-bottom:1px solid var(--line);padding-block:8px}
+  .mobile-menu .btn{margin-top:28px;font-family:var(--mono);font-size:13px;font-weight:400;line-height:1;border-bottom:1px solid var(--fg);padding:15px 24px}
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .pole{display:none}
+  .story-grid,.contact-grid{grid-template-columns:minmax(0,1fr)}
+  .menu{grid-template-columns:minmax(0,1fr)}
+  .units-grid{grid-template-columns:minmax(0,1fr)}
+  .amb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .notice{grid-template-columns:minmax(0,1fr)}
+  .rev-top{grid-template-columns:minmax(0,1fr)}
+  .bk-grid{grid-template-columns:minmax(0,1fr)}
+  .summary{position:static}
+  footer.site .wrap{grid-template-columns:minmax(0,1fr)}
+  .fab{display:flex;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:45;background:var(--fg);color:var(--bg);border:1px solid var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:14px 18px;gap:8px;box-shadow:0 8px 30px rgba(0,0,0,.35);transition:transform .3s,opacity .3s}
+  .fab.hide{transform:translateY(120%);opacity:0}
+}
+@media (max-width:600px){
+  .unitbar-addr,.unitbar-label{display:none}
+  .unitbar .wrap{justify-content:center}
+  .switch{width:100%}
+  .switch button{flex:1;padding:6px 8px;letter-spacing:.08em}
+  .team-row{grid-auto-columns:78%}
+  .quotes{grid-template-columns:minmax(0,1fr)}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat,.stat:first-child,.stat:nth-child(4){padding:20px 14px 22px 0;border-right:0}
+  .stat:nth-child(odd){border-right:1px solid var(--line)}
+  .stat:nth-child(even){padding-left:16px}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .stat:last-child{grid-column:1 / -1;border-right:0}
+  .amb-grid{grid-template-columns:minmax(0,1fr)}
+  .tl{grid-template-columns:78px minmax(0,1fr)}
+  .tl b{font-size:28px}
+  .price{font-size:26px}
+  .hero-cta .btn{flex:1;justify-content:center}
+  .step{grid-template-columns:minmax(0,1fr);gap:10px}
+  .step-n{font-size:32px}
+  .fields-2{grid-template-columns:minmax(0,1fr)}
+  .unit-info div{grid-template-columns:minmax(0,1fr);gap:2px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv.pending{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="stache" viewBox="0 0 120 40"><path fill="currentColor" d="M60 13C53 3 39 3 31 11c-6 6-14 11-25 7-2-1-4 0-3 2 7 14 31 16 45 6 6-4 10-6 12-6s6 2 12 6c14 10 38 8 45-6 1-2-1-3-3-2-11 4-19-1-25-7-8-8-22-8-29 2z"/></symbol>
+  </defs>
+</svg>
+
+<div class="top" id="top">
+  <div class="unitbar">
+    <div class="wrap">
+      <div class="unitbar-l">
+        <span class="unitbar-label">Unidade</span>
+        <div class="switch" role="radiogroup" aria-label="Escolher unidade">
+          <button type="button" role="radio" data-set-unit="bra" aria-checked="true">Brasília</button>
+          <button type="button" role="radio" data-set-unit="gv" aria-checked="false">Getúlio Vargas</button>
+        </div>
+      </div>
+      <span class="unitbar-addr" data-u="short">Rua Adenil Falcão, 1526 · Brasília</span>
+    </div>
+  </div>
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <a class="brand" href="#topo" aria-label="Barber Rvasc, voltar ao topo">
+        <svg width="44" height="15"><use href="#stache"/></svg>
+        <span class="brand-txt">Rvasc<small>Barber · Corte × Barba</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#historia">História</a></li>
+        <li><a href="#unidades">Unidades</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a class="btn btn-solid" href="#agendar">Agendar <span class="arr">→</span></a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-menu" aria-label="Menu">
+      <a href="#historia">História</a>
+      <a href="#unidades">Unidades</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#ambiente">Ambiente</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-solid" href="#agendar">Agendar horário <span class="arr">→</span></a>
+    </nav>
+  </header>
+</div>
+
+<div class="curtain" id="curtain" aria-hidden="true">
+  <svg><use href="#stache"/></svg>
+  <b id="curtainName">Getúlio Vargas</b>
+  <small>Barber Rvasc</small>
+</div>
+
+<main id="topo">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow"><span><span data-u="title">Unidade Brasília</span> · Feira de Santana · Desde 2017</span></p>
+          <h1>
+            <span class="line"><span>Muito além</span></span>
+            <span class="line"><span class="outline">de um</span></span>
+            <span class="line"><span>corte.</span></span>
+          </h1>
+          <div class="hero-sub">
+            <p>Aqui você sai com a autoestima renovada. Corte, barba, sobrancelha e manicure com hora marcada, café na espera e som ambiente.</p>
+            <div class="hero-cta">
+              <a class="btn btn-solid" href="#agendar">Agendar horário <span class="arr">→</span></a>
+              <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+            </div>
+          </div>
+        </div>
+        <div class="pole" aria-hidden="true">
+          <div class="pole-cap"></div>
+          <div class="pole-glass"></div>
+          <div class="pole-cap"></div>
+          <span class="pole-label">RVASC · 2017</span>
+        </div>
+      </div>
+      <div class="stats" id="stats">
+        <div class="stat"><b>5.0</b><span><span class="stars">★★★★★</span><br>13 avaliações</span></div>
+        <div class="stat"><b>350+</b><span>clientes por mês</span></div>
+        <div class="stat"><b>5.500+</b><span>clientes satisfeitos</span></div>
+        <div class="stat"><b>40+</b><span>clientes novos todo mês</span></div>
+        <div class="stat"><b>100%</b><span>taxa de retorno</span></div>
+      </div>
+    </div>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+  </section>
+
+  <section class="inv" id="historia">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="rv">
+          <p class="eyebrow">Nossa história</p>
+          <p class="story-quote">Começou no quintal da casa de vó, com <em>uma cadeira</em> e vontade de fazer acontecer.</p>
+        </div>
+        <div class="rv">
+          <div class="story-text">
+            <p>A Barber Rvasc nasceu em 2017 com poucos materiais e muita dedicação. O cuidado com cada cliente fez a casa crescer, e hoje são duas unidades em Feira de Santana.</p>
+            <p>Somos uma comunidade de milhares de clientes satisfeitos, com gente nova chegando todo mês. E quem vem, volta: nossa taxa de retorno é de 100%.</p>
+          </div>
+          <div class="timeline">
+            <div class="tl"><b>2017</b><p><strong>O quintal</strong>Uma cadeira, poucos materiais e os primeiros clientes na casa de vó.</p></div>
+            <div class="tl"><b>Hoje</b><p><strong>Duas unidades</strong>Brasília, na Rua Adenil Falcão, e Getúlio Vargas, no Ponto Central. Mesmo padrão, atendimento 100% por agendamento.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="unidades">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <p class="eyebrow">Onde atendemos</p>
+          <h2>Duas casas,<br>um padrão</h2>
+        </div>
+        <p>Escolha a unidade mais perto de você. Todo o site muda para mostrar endereço, contato e agendamento da unidade escolhida.</p>
+      </div>
+      <div class="units-grid rv" id="unitsGrid"></div>
+    </div>
+  </section>
+
+  <section id="servicos" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv" style="border-top:1px solid var(--line);padding-top:clamp(60px,8vw,100px)">
+        <div>
+          <p class="eyebrow">Tabela de serviços</p>
+          <h2>Serviços<br>&amp; valores</h2>
+        </div>
+        <p>Escolha a categoria e toque em "Agendar" para reservar o serviço com o profissional e o horário que preferir.</p>
+      </div>
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div class="menu" id="menu" role="tabpanel" aria-live="polite"></div>
+      <div class="club rv">
+        <div>
+          <h3>Clubes de assinatura</h3>
+          <p>Planos mensais para quem mantém o visual em dia. Fale com a gente no WhatsApp para conhecer os planos disponíveis.</p>
+        </div>
+        <a class="btn btn-ghost" id="clubLink" href="https://wa.me/5575992519648" target="_blank" rel="noopener">Perguntar no WhatsApp <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="equipe">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <p class="eyebrow"><span>Quem atende você · <span data-u="nome">Brasília</span></span></p>
+          <h2>Nossa<br>equipe</h2>
+        </div>
+        <p>Profissionais que conhecem cada cliente pelo nome. Escolha quem vai cuidar do seu visual na hora de agendar.</p>
+      </div>
+      <div class="team-row" id="team"></div>
+      <p class="team-note" id="teamNote"></p>
+    </div>
+  </section>
+
+  <section class="booking" id="agendar">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <p class="eyebrow">Agendamento online</p>
+          <h2>Reserve seu<br>horário</h2>
+        </div>
+        <p>Escolha a unidade, o serviço, o profissional, o dia e o horário. Seu pedido chega direto no WhatsApp da unidade e a gente confirma com você.</p>
+      </div>
+      <div class="bk-grid">
+        <form class="bk-form" id="bkForm" novalidate>
+          <div class="step done" id="st0">
+            <span class="step-n">1</span>
+            <div class="step-body">
+              <h3>Unidade</h3>
+              <div class="unit-pick" role="group" aria-label="Unidade">
+                <button type="button" class="upick" data-set-unit="bra" aria-pressed="true">Brasília</button>
+                <button type="button" class="upick" data-set-unit="gv" aria-pressed="false">Getúlio Vargas</button>
+              </div>
+            </div>
+          </div>
+          <div class="step" id="st1">
+            <span class="step-n">2</span>
+            <div class="step-body">
+              <h3>Serviço</h3>
+              <div class="field"><label for="bkSvc">Escolha o serviço</label><select id="bkSvc" required><option value="">Selecione…</option></select></div>
+            </div>
+          </div>
+          <div class="step" id="st2">
+            <span class="step-n">3</span>
+            <div class="step-body">
+              <h3>Profissional</h3>
+              <div class="pros" id="bkPros" role="group" aria-label="Profissional"></div>
+            </div>
+          </div>
+          <div class="step" id="st3">
+            <span class="step-n">4</span>
+            <div class="step-body">
+              <h3>Dia e horário</h3>
+              <div class="field"><label for="bkDate">Data</label><input type="date" id="bkDate" required></div>
+              <div id="bkSlotsWrap"><p class="hint">Escolha uma data para ver os horários.</p></div>
+            </div>
+          </div>
+          <div class="step" id="st4">
+            <span class="step-n">5</span>
+            <div class="step-body">
+              <h3>Seus dados</h3>
+              <div class="fields-2">
+                <div class="field"><label for="bkName">Nome</label><input type="text" id="bkName" autocomplete="name" placeholder="Seu nome" required></div>
+                <div class="field"><label for="bkPhone">WhatsApp</label><input type="tel" id="bkPhone" autocomplete="tel" inputmode="numeric" placeholder="(75) 90000-0000" required></div>
+              </div>
+              <div class="field"><label for="bkObs">Observação (opcional)</label><textarea id="bkObs" placeholder="Ex.: quero manter o comprimento em cima"></textarea></div>
+            </div>
+          </div>
+        </form>
+        <aside class="summary" aria-live="polite">
+          <h3>Seu agendamento</h3>
+          <div class="sum-list">
+            <div class="sum-row"><span>Unidade</span><span data-u="nome">Brasília</span></div>
+            <div class="sum-row"><span>Serviço</span><span id="sSvc">—</span></div>
+            <div class="sum-row"><span>Profissional</span><span id="sPro">—</span></div>
+            <div class="sum-row"><span>Data</span><span id="sDate">—</span></div>
+            <div class="sum-row"><span>Horário</span><span id="sTime">—</span></div>
+            <div class="sum-row"><span>Duração</span><span id="sDur">—</span></div>
+          </div>
+          <div class="sum-total"><small id="sFrom">Valor</small><b id="sPrice">R$ 0,00</b></div>
+          <button class="btn" type="submit" form="bkForm" id="bkSubmit" disabled>Enviar pedido pelo WhatsApp <span class="arr">→</span></button>
+          <p class="sum-note">O horário fica garantido depois que a unidade confirmar a sua mensagem.</p>
+          <div id="bkDone"></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="inv" id="ambiente">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <p class="eyebrow"><span>A experiência · <span data-u="nome">Brasília</span></span></p>
+          <h2>Enquanto<br>você se alinha</h2>
+        </div>
+        <p>Som agradável, café e guloseimas durante a espera ou o atendimento.</p>
+      </div>
+      <div class="amb-grid rv" id="ambGrid"></div>
+      <div class="notice rv" id="notice"></div>
+    </div>
+  </section>
+
+  <section id="avaliacoes">
+    <div class="wrap">
+      <div class="rev-top rv">
+        <div class="score">5.0</div>
+        <div class="score-meta">
+          <p class="eyebrow">Avaliações · unidade Brasília</p>
+          <h2>A melhor<br>de Feira</h2>
+          <p><span class="stars" style="color:var(--fg)">★★★★★</span> &nbsp;Nota máxima em todas as 13 avaliações dos clientes</p>
+        </div>
+      </div>
+      <div class="quotes rv">
+        <article class="q"><blockquote>Ótimo profissional, atendimento de primeira qualidade, e atende sempre as minhas expectativas.</blockquote><footer><span>Lucas · 04/07/2026</span><span class="stars">★★★★★</span></footer></article>
+        <article class="q"><blockquote>Essa é a melhor barbearia de Feira: atendimento + profissionais de excelência tudo no mesmo lugar.</blockquote><footer><span>Érico · 19/04/2025</span><span class="stars">★★★★★</span></footer></article>
+        <article class="q"><blockquote>Estabelecimento ótimo, profissionais perfeitos.</blockquote><footer><span>Fauan · 16/08/2024</span><span class="stars">★★★★★</span></footer></article>
+        <article class="q"><blockquote>A braaaba, melhor de Feira!!</blockquote><footer><span>Neto · 02/02/2024</span><span class="stars">★★★★★</span></footer></article>
+      </div>
+      <div class="more-rev rv">
+        <span class="chip"><b>Melhor Barbearia da Cidade!!!</b> · João · 17/12/2023</span>
+        <span class="chip">★ 5.0 · Anderson · 21/11/2025</span>
+        <span class="chip">★ 5.0 · Lucas · 08/07/2025</span>
+        <span class="chip">★ 5.0 · Renato · 27/05/2025</span>
+        <span class="chip">★ 5.0 · João · 24/10/2024</span>
+        <span class="chip">★ 5.0 · Daniel · 02/02/2024</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="inv" id="contato">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="rv">
+          <p class="eyebrow"><span>Onde estamos · <span data-u="title">Unidade Brasília</span></span></p>
+          <p class="addr"><span data-u="end1">Rua Adenil Falcão, 1526</span><br><span data-u="end2">Brasília · Feira de Santana</span></p>
+          <p class="addr-sub" data-u="ref">Próximo à Praça da Adenil e à Academia Feira Fitness. Feira de Santana, BA, CEP 44088-642.</p>
+          <div class="contact-actions">
+            <a class="btn btn-solid" id="mapLink" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Adenil+Falc%C3%A3o+1526+Feira+de+Santana+BA" target="_blank" rel="noopener">Ver no mapa <span class="arr">→</span></a>
+            <a class="btn btn-ghost" id="waLink" href="https://wa.me/5575992519648" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <div class="phone">
+            <a id="phone" href="tel:+5575992519648">(75) 99251-9648</a>
+            <button class="copy" id="copyBtn" type="button">Copiar</button>
+          </div>
+          <div class="pay">
+            <h4>Formas de pagamento</h4>
+            <div class="pay-list" id="payList"></div>
+          </div>
+        </div>
+        <div class="rv">
+          <div class="hours">
+            <h3>Horário de funcionamento</h3>
+            <div class="hr" data-d="1,2,3,4,5"><span>Segunda a sexta</span><span>09:00 – 19:30</span></div>
+            <div class="hr" data-d="6"><span>Sábado</span><span>09:00 – 17:30</span></div>
+            <div class="hr" data-d="0"><span>Domingo</span><span>Fechado</span></div>
+          </div>
+          <p class="contact-extra" data-u="extra">Atendimento em português. Atendemos adultos e crianças.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <p class="eyebrow">Sua próxima versão</p>
+      <h2 class="rv">Marque seu<br><span class="outline">horário.</span></h2>
+      <div class="final-row rv">
+        <p>Agendamento online 24 horas. Escolha a unidade, o serviço, o profissional e o horário que cabe no seu dia.</p>
+        <a class="btn btn-solid" href="#agendar">Agendar agora <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div><b>Barber Rvasc</b>Corte × Barba · desde 2017<br>Feira de Santana, BA</div>
+    <div><b>Unidade Brasília</b>Rua Adenil Falcão, 1526<br>(75) 99251-9648</div>
+    <div><b>Unidade Getúlio Vargas</b>Av. Getúlio Vargas, 2020, Sala 08<br>(75) 98155-7777</div>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="#agendar">Agendar →</a>
+
+<script>
+/* Equipe de cada unidade: coloque o caminho da foto em "foto" (ex.: "img/igor.jpg") */
+const TEAM = {
+  bra: [
+    { nome: "Igor",    funcao: "Barbeiro", foto: "" },
+    { nome: "Kaio",    funcao: "Barbeiro", foto: "" },
+    { nome: "Rodrigo", funcao: "Barbeiro", foto: "" },
+    { nome: "Kauan",   funcao: "Barbeiro", foto: "" },
+    { nome: "Thais",   funcao: "Manicure", foto: "" }
+  ],
+  gv: [
+    { nome: "Igor",    funcao: "Barbeiro", foto: "" },
+    { nome: "Kaio",    funcao: "Barbeiro", foto: "" },
+    { nome: "Rodrigo", funcao: "Barbeiro", foto: "" },
+    { nome: "Kauan",   funcao: "Barbeiro", foto: "" },
+    { nome: "Thais",   funcao: "Manicure", foto: "" }
+  ]
+};
+
+const UNITS = {
+  bra: {
+    nome: "Brasília",
+    title: "Unidade Brasília",
+    short: "Rua Adenil Falcão, 1526 · Brasília",
+    end1: "Rua Adenil Falcão, 1526",
+    end2: "Brasília · Feira de Santana",
+    ref: "Próximo à Praça da Adenil e à Academia Feira Fitness. Feira de Santana, BA, CEP 44088-642.",
+    extra: "Atendimento em português. Atendemos adultos e crianças.",
+    tel: "(75) 99251-9648",
+    wa: "5575992519648",
+    maps: "https://www.google.com/maps/search/?api=1&query=Rua+Adenil+Falc%C3%A3o+1526+Feira+de+Santana+BA",
+    theme: "#0a0a0a",
+    visual: "Preto e branco",
+    stats: [
+      ["5.0", '<span class="stars">★★★★★</span><br>13 avaliações'],
+      ["350+", "clientes por mês", 350],
+      ["5.500+", "clientes satisfeitos", 5500],
+      ["40+", "clientes novos todo mês", 40],
+      ["100%", "taxa de retorno", 100]
+    ],
+    pay: ["PIX","PIX Integrado","Dinheiro","Visa","Mastercard","Elo Crédito","Elo Débito","Maestro / Redeshop","Visa Electron","Cartão de Crédito","Cartão de Débito","Pagamento online por link"],
+    amb: [
+      ["cafe","Bar e lanchonete","Café e guloseimas por conta da casa."],
+      ["wifi","Wi-Fi","Conexão liberada para clientes."],
+      ["tv","TV e som ambiente","Música boa e TV ligada no salão."],
+      ["park","Estacionamento grátis","Na lateral da Praça da Adenil Falcão, seguro e arborizado."],
+      ["kids","Adultos e crianças","Corte infantil com o mesmo cuidado."],
+      ["card","Cartão, PIX e dinheiro","Todas as formas de pagamento listadas abaixo."]
+    ],
+    notice: [
+      ["100% com hora marcada","Funcionamos por agendamento. Pode haver encaixes, atendimentos por chegada ou por desistência, mas em regra tudo é combinado antes. Garanta seu horário aqui pelo site ou pelo WhatsApp."],
+      ["Onde estacionar","Não há estacionamento em frente à barbearia. Estamos praticamente na esquina da Praça da Adenil Falcão: estacione na lateral da praça, um lugar seguro, calmo e bem arborizado."]
+    ]
+  },
+  gv: {
+    nome: "Getúlio Vargas",
+    title: "Unidade Getúlio Vargas",
+    short: "Av. Getúlio Vargas, 2020 · Ponto Central",
+    end1: "Av. Getúlio Vargas, 2020, Sala 08",
+    end2: "Ponto Central · Feira de Santana",
+    ref: "Ao lado do Studio de Sanio Tattoo. Feira de Santana, BA, CEP 44075-425.",
+    extra: "Atendimento em português. Atendemos adultos e crianças. Espaço acessível para cadeirantes.",
+    tel: "(75) 98155-7777",
+    wa: "5575981557777",
+    maps: "https://www.google.com/maps/search/?api=1&query=Avenida+Get%C3%BAlio+Vargas+2020+Ponto+Central+Feira+de+Santana+BA",
+    theme: "#f4f4f2",
+    visual: "Branco e preto",
+    stats: [
+      ["2017", "desde a fundação"],
+      ["500+", "clientes por mês", 500],
+      ["15.000+", "clientes satisfeitos", 15000],
+      ["100%", "taxa de retorno", 100],
+      ["6", "dias de atendimento por semana", 6]
+    ],
+    pay: ["PIX","Dinheiro","Visa","Mastercard","American Express","Elo","Maestro","Hipercard"],
+    amb: [
+      ["cafe","Bar e lanchonete","Café e guloseimas durante a espera."],
+      ["wifi","Wi-Fi","Conexão liberada para clientes."],
+      ["tv","TV","TV ligada no salão enquanto você espera."],
+      ["park","Estacionamento grátis","Estacionamento em frente à barbearia."],
+      ["access","Acessível","Espaço preparado para cadeirantes."],
+      ["kids","Adultos e crianças","Corte infantil com o mesmo cuidado."]
+    ],
+    notice: [
+      ["100% com hora marcada","Funcionamos por agendamento e a recepção confirma todas as reservas. Pode haver encaixes, atendimentos por chegada ou por desistência, mas em regra tudo é combinado antes."],
+      ["Exclusivo na região","Somos a única barbearia da região com manicure, pedicure e clubes de assinatura personalizados no mesmo lugar."]
+    ]
+  }
+};
+
+const ICONS = {
+  cafe: '<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/>',
+  wifi: '<path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/>',
+  tv: '<rect x="3" y="5" width="18" height="12" rx="1"/><path d="M8 21h8M12 17v4"/>',
+  park: '<path d="M4 20V4h9a5 5 0 0 1 0 10H4"/>',
+  kids: '<circle cx="8" cy="6" r="2.5"/><circle cx="17" cy="9" r="2"/><path d="M4 21v-6a4 4 0 0 1 8 0v6M14 21v-4a3 3 0 0 1 6 0v4"/>',
+  card: '<rect x="2" y="6" width="20" height="13" rx="1"/><path d="M2 10h20M6 15h4"/>',
+  access: '<circle cx="12" cy="4.5" r="2"/><path d="M12 7v6h5l2 6M12 10h5"/><path d="M9 11a5 5 0 1 0 6.5 7"/>'
+};
+
+const SERVICES = {
+  "Cabelo": [
+    ["Cabelo e Barba","CB","1h 5min","Corte + Barba",75],
+    ["Cabelo e Sobrancelhas","CS","45min","Cabelo e Sobrancelhas",60],
+    ["Cabelo Tesoura e Barba","CTB","1h 5min","Corte masculino todo na tesoura + Barba",85],
+    ["Cabelo, Barba e Sobrancelhas","CBS","1h 10min","Combo Cabelo + Barba + Sobrancelhas",80],
+    ["Corte Infantil","","35min","Corte infantil",55],
+    ["Corte Masculino","","35min","Corte masculino",55],
+    ["Corte Tesoura","CT","45min","Corte 100% na tesoura",60],
+    ["Desondulação Capilar","","1h","Pode ser total ou parcial",75,true],
+    ["Escova Botox","","1h 35min","Sem corte de cabelo",75,true],
+    ["Finalização","","10min","Finalização do cabelo",20],
+    ["Hidratação com Ozonioterapia","","20min","Hidratação",20],
+    ["Pé do Cabelo","","20min","Pé do cabelo",15],
+    ["Pigmentação Cabelo","","35min","Modula o cabelo",45]
+  ],
+  "Barba e Bigode": [
+    ["Barba","","30min","Barba",40],
+    ["Barboterapia com Ozônio","","45min","Barboterapia sem corte de cabelo",55],
+    ["Barboterapia e Cabelo com Ozônio","BC","1h 5min","Barboterapia e corte masculino",90],
+    ["Hidratação da Barba","","15min","Hidratação da barba do cliente",20],
+    ["Pé do Cabelo e Barba","","30min","Contorno do cabelo + barba",45],
+    ["Pigmentação Barba","","30min","Moldura da barba",35]
+  ],
+  "Manicure": [
+    ["Blindagem das Unhas · Unissex","","1h","Blindagem das unhas",70],
+    ["Esmaltação em Gel · Feminino","","1h","Esmaltação em gel",75],
+    ["Mão Completa","MC","35min","Corte de unha + Cutilagem + Esmaltação + SPA das mãos",35],
+    ["Mão e Pé Completo","","1h 5min","Corte de unhas + Cutilagem + Esmaltação",55],
+    ["Mão e Pé Completo + SPA dos Pés","","1h 5min","Mão e pé completo com SPA dos pés",95],
+    ["Mão e Pé Simples","MPS","45min","Corte de unhas + Lixa + Limpeza dos cantos",45],
+    ["Mão Simples","MS","25min","Corte de unhas",25],
+    ["Pé Completo","PC","25min","Corte de unha + Cutilagem + Esmaltação",35],
+    ["Pé Completo + SPA dos Pés","","1h","Pé completo com SPA dos pés",75],
+    ["Pé Simples","PS","25min","Corte de unha",25],
+    ["Plástica dos Pés","","1h","Serviço total de pedicure",75,true],
+    ["SPA dos Pés","","30min","Manicure, SPA dos pés",55,true]
+  ],
+  "Sobrancelha": [
+    ["Sobrancelha","","20min","Sobrancelha",20]
+  ],
+  "Depilação": [
+    ["Depilação Nariz e Orelha","","20min","Depilação do nariz e da orelha",20]
+  ]
+};
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const brl = n => "R$ " + n.toFixed(2).replace(".", ",");
+const $ = id => document.getElementById(id);
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let unit = document.documentElement.getAttribute("data-unit") === "gv" ? "gv" : "bra";
+const onUnit = [];
+
+(() => {
+  const words = ["Corte","Barba","Sobrancelha","Barboterapia com ozônio","Manicure","Pigmentação","Corte na tesoura","Escova botox","Corte infantil"];
+  const html = words.map(w => `<span>${w}</span>`).join("");
+  $("marquee").innerHTML = html + html;
+})();
+
+/* services */
+(() => {
+  const tabs = $("tabs"), menu = $("menu");
+  const cats = Object.keys(SERVICES);
+  tabs.innerHTML = cats.map((c,i) => `<button class="tab" role="tab" aria-selected="${i===0}" data-cat="${esc(c)}">${esc(c)} <em>${String(SERVICES[c].length).padStart(2,"0")}</em></button>`).join("");
+  function render(cat){
+    menu.innerHTML = SERVICES[cat].map((s,i) => {
+      const [name,code,dur,desc,price,from] = s;
+      return `<div class="svc" style="animation-delay:${Math.min(i*40,400)}ms">
+        <h3>${esc(name)}${code?` <span class="code">${code}</span>`:""}</h3>
+        <div class="price">${from?"<small>A partir de</small>":""}${brl(price)}</div>
+        <p class="desc">${esc(desc)}</p>
+        <div class="meta">◷ ${dur}</div>
+        <a class="book" href="#agendar" data-svc="${esc(name)}">Agendar →</a>
+      </div>`;
+    }).join("");
+  }
+  tabs.addEventListener("click", e => {
+    const b = e.target.closest(".tab"); if(!b) return;
+    tabs.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t===b));
+    render(b.dataset.cat);
+  });
+  render(cats[0]);
+})();
+
+/* team */
+function renderTeam(){
+  $("team").innerHTML = TEAM[unit].map(m => `
+    <article class="member" tabindex="0">
+      ${m.foto ? `<div class="photo" style="background-image:url('${esc(m.foto)}')" role="img" aria-label="Foto de ${esc(m.nome)}"></div>`
+               : `<div class="ph"><i>Foto em breve</i><b>${esc(m.nome[0])}</b></div>`}
+      <span class="vname" aria-hidden="true">Rvasc · ${esc(m.funcao)}</span>
+      <div class="info">
+        <p class="role">${esc(m.funcao)}</p>
+        <h3>${esc(m.nome)}</h3>
+        <a class="cta" href="#agendar" data-pro="${esc(m.nome)}">Agendar com ${esc(m.nome)} →</a>
+      </div>
+    </article>`).join("");
+  $("teamNote").textContent = matchMedia("(max-width:1080px)").matches ? "← Deslize para ver toda a equipe →" : "";
+}
+onUnit.push(renderTeam);
+
+/* units cards */
+function renderUnits(){
+  $("unitsGrid").innerHTML = Object.entries(UNITS).map(([k,u]) => `
+    <article class="unit${k===unit?" current":""}">
+      <div class="unit-top">
+        <h3>${esc(u.nome)}</h3>
+        <span class="unit-tag here">Você está aqui</span>
+      </div>
+      <div class="swatch"><i style="background:${k==="bra"?"#0a0a0a":"#f4f4f2"}"></i><i style="background:${k==="bra"?"#f4f4f2":"#0a0a0a"}"></i>${u.visual}</div>
+      <div class="unit-info">
+        <div><span>Endereço</span><span>${esc(u.end1)}<br>${esc(u.end2)}</span></div>
+        <div><span>Referência</span><span>${esc(u.ref.split(". Feira")[0])}</span></div>
+        <div><span>Telefone</span><span>${esc(u.tel)}</span></div>
+        <div><span>Horário</span><span>Seg a sex 09:00–19:30 · Sáb 09:00–17:30</span></div>
+      </div>
+      <div class="unit-actions">
+        <button type="button" class="btn btn-solid go" data-set-unit="${k}">Ver esta unidade <span class="arr">→</span></button>
+        <a class="btn btn-solid here" href="#agendar">Agendar aqui <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="${u.maps}" target="_blank" rel="noopener">Como chegar</a>
+      </div>
+    </article>`).join("");
+}
+onUnit.push(renderUnits);
+
+/* stats */
+function renderStats(animate){
+  const st = UNITS[unit].stats;
+  $("stats").innerHTML = st.map(([v,l,n]) => `<div class="stat"><b${n!=null?` data-count="${n}" data-final="${esc(v)}"`:""}>${esc(v)}</b><span>${l}</span></div>`).join("");
+  if (!animate || reduceMotion) return;
+  $("stats").querySelectorAll("[data-count]").forEach(el => {
+    const target = +el.dataset.count, fin = el.dataset.final, suf = fin.replace(/[\d.]/g,"");
+    const t0 = performance.now() + 250, dur = 1400;
+    const tick = now => {
+      const p = Math.min(Math.max((now - t0)/dur,0),1), e = 1 - Math.pow(1-p,3);
+      el.textContent = p >= 1 ? fin : Math.round(target*e).toLocaleString("pt-BR") + suf;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+}
+
+/* unit-dependent content */
+function renderUnitContent(){
+  const u = UNITS[unit];
+  document.querySelectorAll("[data-u]").forEach(el => { el.textContent = u[el.dataset.u]; });
+  $("phone").textContent = u.tel; $("phone").href = "tel:+" + u.wa;
+  $("waLink").href = "https://wa.me/" + u.wa;
+  $("mapLink").href = u.maps;
+  $("clubLink").href = `https://wa.me/${u.wa}?text=${encodeURIComponent("Olá! Quero saber sobre os clubes de assinatura da Barber Rvasc " + u.nome + ".")}`;
+  $("payList").innerHTML = u.pay.map(p => `<span>${esc(p)}</span>`).join("");
+  $("ambGrid").innerHTML = u.amb.map(([ic,t,d]) => `<div class="amb"><svg viewBox="0 0 24 24">${ICONS[ic]}</svg><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("");
+  $("notice").innerHTML = u.notice.map(([t,d]) => `<div><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("");
+  document.querySelectorAll("[data-set-unit]").forEach(b => {
+    const on = b.dataset.setUnit === unit;
+    if (b.getAttribute("role") === "radio") b.setAttribute("aria-checked", on);
+    if (b.classList.contains("upick")) b.setAttribute("aria-pressed", on);
+  });
+  const meta = document.querySelector('meta[name="theme-color"]'); if (meta) meta.content = u.theme;
+}
+onUnit.push(renderUnitContent);
+
+/* switching with curtain */
+let switching = false;
+function setUnit(next){
+  if (next === unit || switching || !UNITS[next]) return;
+  try { localStorage.setItem("rvasc-unidade", next); } catch(e){}
+  const apply = () => {
+    unit = next;
+    document.documentElement.setAttribute("data-unit", next);
+    onUnit.forEach(f => f());
+    renderStats(true);
+  };
+  if (reduceMotion){ apply(); return; }
+  switching = true;
+  const c = $("curtain");
+  const nextBg = next === "gv" ? "#f4f4f2" : "#0a0a0a", nextFg = next === "gv" ? "#0a0a0a" : "#f4f4f2";
+  c.style.background = nextBg; c.style.color = nextFg;
+  $("curtainName").textContent = UNITS[next].nome;
+  c.classList.remove("out"); void c.offsetWidth; c.classList.add("in");
+  setTimeout(() => {
+    apply();
+    setTimeout(() => {
+      c.classList.add("out");
+      setTimeout(() => { c.classList.remove("in","out"); switching = false; }, 650);
+    }, 380);
+  }, 560);
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-set-unit]"); if (!b) return;
+  e.preventDefault(); setUnit(b.dataset.setUnit);
+});
+
+/* today's hours */
+(() => {
+  let d;
+  try { d = new Date(new Date().toLocaleString("en-US",{timeZone:"America/Bahia"})).getDay(); } catch(e){ d = new Date().getDay(); }
+  document.querySelectorAll(".hr").forEach(r => { if (r.dataset.d.split(",").includes(String(d))) r.classList.add("today"); });
+})();
+
+$("copyBtn").addEventListener("click", async (e) => {
+  const btn = e.currentTarget, el = $("phone");
+  try { await navigator.clipboard.writeText(el.textContent); btn.textContent = "Copiado"; }
+  catch(err){ const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Selecionado"; }
+  setTimeout(() => btn.textContent = "Copiar", 2000);
+});
+
+(() => {
+  const top = $("top"), nav = $("nav"), burger = $("burger"), fab = $("fab");
+  const onScroll = () => {
+    top.classList.toggle("solid", scrollY > 30);
+    const c = $("contato").getBoundingClientRect(), a = $("agendar").getBoundingClientRect();
+    const inBooking = a.top < innerHeight && a.bottom > 0;
+    fab.classList.toggle("hide", scrollY < 400 || c.top < innerHeight || inBooking);
+  };
+  addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  const close = () => { nav.classList.remove("open"); burger.setAttribute("aria-expanded", false); document.body.style.overflow = ""; };
+  burger.addEventListener("click", () => {
+    const o = nav.classList.toggle("open");
+    burger.setAttribute("aria-expanded", o);
+    document.body.style.overflow = o ? "hidden" : "";
+  });
+  nav.querySelectorAll(".mobile-menu a").forEach(a => a.addEventListener("click", close));
+})();
+
+/* booking */
+(() => {
+  const toMin = d => { const h = /(\d+)h/.exec(d), m = /(\d+)min/.exec(d); return (h ? +h[1]*60 : 0) + (m ? +m[1] : 0); };
+  const list = [];
+  const sel = $("bkSvc");
+  Object.entries(SERVICES).forEach(([cat, items]) => {
+    const g = document.createElement("optgroup"); g.label = cat;
+    items.forEach(([name,code,dur,desc,price,from]) => {
+      const o = document.createElement("option");
+      o.value = list.length; o.textContent = `${name} · ${from ? "a partir de " : ""}${brl(price)}`;
+      g.appendChild(o);
+      list.push({name, code, dur, min: toMin(dur), price, from, cat});
+    });
+    sel.appendChild(g);
+  });
+  const barbers = () => TEAM[unit].filter(m => m.funcao !== "Manicure").map(m => m.nome);
+  const nails = () => TEAM[unit].filter(m => m.funcao === "Manicure").map(m => m.nome);
+
+  const state = { svc: null, pro: "", date: "", time: "" };
+  const pad = n => String(n).padStart(2,"0");
+  const hm = m => `${pad(Math.floor(m/60))}:${pad(m%60)}`;
+  const WD = ["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
+  const nowBahia = () => { try { return new Date(new Date().toLocaleString("en-US",{timeZone:"America/Bahia"})); } catch(e){ return new Date(); } };
+  const iso = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+  const today = nowBahia();
+  $("bkDate").min = iso(today);
+  const max = new Date(today); max.setDate(max.getDate()+60); $("bkDate").max = iso(max);
+
+  function renderPros(){
+    const box = $("bkPros");
+    if (!state.svc){ box.innerHTML = '<p class="hint">Escolha um serviço primeiro.</p>'; return; }
+    const opts = state.svc.cat === "Manicure" ? nails() : ["Sem preferência", ...barbers()];
+    if (!opts.length){ box.innerHTML = '<p class="hint">Este serviço não está disponível nesta unidade.</p>'; state.pro = ""; return; }
+    if (!opts.includes(state.pro)) state.pro = opts[0];
+    box.innerHTML = opts.map(p => `<button type="button" class="pro" aria-pressed="${p===state.pro}" data-p="${esc(p)}">${esc(p)}</button>`).join("");
+  }
+  $("bkPros").addEventListener("click", e => {
+    const b = e.target.closest(".pro"); if (!b) return;
+    state.pro = b.dataset.p; renderPros(); update();
+  });
+
+  function renderSlots(){
+    const wrap = $("bkSlotsWrap");
+    if (!state.date){ wrap.innerHTML = '<p class="hint">Escolha uma data para ver os horários.</p>'; return; }
+    const d = new Date(state.date + "T12:00:00"), wd = d.getDay();
+    if (wd === 0){ wrap.innerHTML = '<p class="err">Não abrimos aos domingos. Escolha outro dia.</p>'; state.time = ""; return; }
+    const open = 9*60, close = wd === 6 ? 17*60+30 : 19*60+30;
+    const dur = state.svc ? state.svc.min : 30;
+    let earliest = open;
+    if (state.date === iso(nowBahia())){ const n = nowBahia(); earliest = Math.max(open, n.getHours()*60 + n.getMinutes() + 30); }
+    const slots = [];
+    for (let t = open; t + dur <= close; t += 30) if (t >= earliest) slots.push(hm(t));
+    if (!slots.includes(state.time)) state.time = "";
+    wrap.innerHTML = slots.length
+      ? `<div class="field"><label>Horários disponíveis · ${WD[wd]}</label><div class="slots" role="group" aria-label="Horário">${slots.map(t => `<button type="button" class="slot" aria-pressed="${t===state.time}" data-t="${t}">${t}</button>`).join("")}</div></div>`
+      : '<p class="err">Não há mais horários para este dia. Escolha outra data.</p>';
+  }
+  $("bkSlotsWrap").addEventListener("click", e => {
+    const b = e.target.closest(".slot"); if (!b) return;
+    state.time = b.dataset.t; renderSlots(); update();
+  });
+
+  const fmtDate = v => { const d = new Date(v + "T12:00:00"); return `${WD[d.getDay()]}, ${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}`; };
+  const fmtDur = m => m >= 60 ? `${Math.floor(m/60)}h${m%60 ? " " + (m%60) + "min" : ""}` : `${m}min`;
+
+  function update(){
+    const s = state.svc;
+    $("sSvc").textContent = s ? s.name : "—";
+    $("sPro").textContent = s && state.pro ? state.pro : "—";
+    $("sDate").textContent = state.date ? fmtDate(state.date) : "—";
+    $("sTime").textContent = state.time || "—";
+    $("sDur").textContent = s ? fmtDur(s.min) : "—";
+    $("sPrice").textContent = brl(s ? s.price : 0);
+    $("sFrom").textContent = s && s.from ? "A partir de" : "Valor";
+    const phoneOk = $("bkPhone").value.replace(/\D/g,"").length >= 10;
+    const nameOk = $("bkName").value.trim().length >= 2;
+    $("st1").classList.toggle("done", !!s);
+    $("st2").classList.toggle("done", !!s && !!state.pro);
+    $("st3").classList.toggle("done", !!state.date && !!state.time);
+    $("st4").classList.toggle("done", nameOk && phoneOk);
+    $("bkSubmit").disabled = !(s && state.pro && state.date && state.time && nameOk && phoneOk);
+  }
+  onUnit.push(() => { renderPros(); update(); $("bkDone").innerHTML = ""; });
+
+  sel.addEventListener("change", () => {
+    state.svc = sel.value === "" ? null : list[+sel.value];
+    renderPros(); renderSlots(); update();
+  });
+  $("bkDate").addEventListener("change", e => { state.date = e.target.value; state.time = ""; renderSlots(); update(); });
+  $("bkName").addEventListener("input", update);
+  $("bkPhone").addEventListener("input", e => {
+    let v = e.target.value.replace(/\D/g,"").slice(0,11);
+    if (v.length > 6) v = `(${v.slice(0,2)}) ${v.slice(2, v.length-4)}-${v.slice(-4)}`;
+    else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+    e.target.value = v; update();
+  });
+
+  $("bkForm").addEventListener("submit", e => {
+    e.preventDefault();
+    if ($("bkSubmit").disabled) return;
+    const s = state.svc, u = UNITS[unit], obs = $("bkObs").value.trim();
+    const lines = [
+      `Olá! Quero agendar um horário na Barber Rvasc, unidade ${u.nome}.`,
+      "",
+      `*Serviço:* ${s.name}${s.code ? " (" + s.code + ")" : ""}`,
+      `*Valor:* ${s.from ? "a partir de " : ""}${brl(s.price)}`,
+      `*Profissional:* ${state.pro}`,
+      `*Data:* ${fmtDate(state.date)}`,
+      `*Horário:* ${state.time}`,
+      "",
+      `*Nome:* ${$("bkName").value.trim()}`,
+      `*WhatsApp:* ${$("bkPhone").value}`
+    ];
+    if (obs) lines.push(`*Observação:* ${obs}`);
+    const url = `https://wa.me/${u.wa}?text=${encodeURIComponent(lines.join("\n"))}`;
+    window.open(url, "_blank", "noopener");
+    $("bkDone").innerHTML = `<div class="done-box">Abrimos o WhatsApp da unidade ${esc(u.nome)} com o seu pedido. Se ele não abriu, <a href="${url}" target="_blank" rel="noopener">toque aqui para enviar</a>.</div>`;
+  });
+
+  document.addEventListener("click", e => {
+    const a = e.target.closest("[data-svc],[data-pro]"); if (!a) return;
+    if (a.dataset.svc){
+      const idx = list.findIndex(x => x.name === a.dataset.svc);
+      if (idx > -1){ sel.value = idx; state.svc = list[idx]; }
+    }
+    if (a.dataset.pro){
+      const isNail = nails().includes(a.dataset.pro);
+      if (state.svc && (state.svc.cat === "Manicure") !== isNail){ sel.value = ""; state.svc = null; }
+      if (!state.svc && isNail){ const idx = list.findIndex(x => x.cat === "Manicure"); sel.value = idx; state.svc = list[idx]; }
+      state.pro = a.dataset.pro;
+    }
+    renderPros(); renderSlots(); update();
+  });
+
+  renderPros(); update();
+})();
+
+/* first render */
+onUnit.forEach(f => f());
+renderStats(true);
+
+/* scroll reveal */
+(() => {
+  if (!("IntersectionObserver" in window) || reduceMotion) return;
+  const io = new IntersectionObserver(es => es.forEach(en => {
+    if (en.isIntersecting){ en.target.classList.remove("pending"); io.unobserve(en.target); }
+  }), {threshold:.12, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".rv").forEach(el => {
+    if (el.getBoundingClientRect().top > innerHeight){ el.classList.add("pending"); io.observe(el); }
+  });
+})();
+</script>
+</body>
+</html>
